@@ -1,0 +1,46 @@
+#include<stdio.h>
+
+int main()
+{
+    float numA;
+    float numB;
+     
+    printf("Choices of operation:\n");
+    printf("1. For addition \n");
+    printf("2. For subtraction \n");
+    printf("3. For multiplication \n");
+    printf("4. For division \n");
+    printf("Enter choice of operation (+,-,*,/): ");
+     
+    int op;
+    scanf("%d", &op);
+     
+    printf("Enter the first number: ");
+    scanf("%f", &numA);
+     
+    printf("Enter the second number: ");
+    scanf("%f", &numB);
+     
+    switch (op)
+    {
+    case 1:
+        printf("The sum is %.2f\n", numA + numB);
+    break;
+    case 2:
+        printf("The difference is %.2f\n", numA - numB);
+    break;
+    case 3:
+        printf("The product is %.2f\n", numA * numB);
+    break;
+    case 4:
+    if (numB !=0) {
+        printf("The div is %.2f\n", numA / numB);
+        }
+    else 
+        printf("Number is not divisible by zero");
+    break;
+    default:
+        printf("INVALID CHOICE");
+    }
+return 0;
+}
