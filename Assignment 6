@@ -1,0 +1,44 @@
+#include <stdio.h>
+
+unsigned long long factorial_without_recuesion(int n)
+{
+    unsigned long long fact = 1;
+    int i;
+
+    for(i = 1; i <= n; i++)
+    {
+        fact = fact * i;
+    }
+
+    return fact;
+}
+
+unsigned long long factorial_recursive(int n)
+{
+    if(n == 0 || n == 1)
+    {
+        return 1;
+    }
+
+    return n * factorial_recursive(n - 1);
+}
+
+int main()
+{
+    int n;
+
+    printf("Enter a number (0-65): ");
+    scanf("%d", &n);
+
+    if(n < 0 || n > 65)
+    {
+        printf("Please enter a number between 0 and 65.");
+        return 0;
+    }
+
+    printf("Factorial without recursion = %llu\n", factorial_without_recuesion(n));
+
+    printf("Factorial with recursion = %llu\n", factorial_recursive(n));
+
+    return 0;
+}
